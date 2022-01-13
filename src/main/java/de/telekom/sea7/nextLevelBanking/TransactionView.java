@@ -4,16 +4,41 @@ import java.util.Scanner;
 
 public class TransactionView {
 	
-	// SCANNER Initialisieren
-	// Scanner scanner = new Scanner(System.in);
-	// Scanner Eingaben in der Eingabe input speichern
-	// String input = scanner.nextLine();
+
 	
 	private SingleTransactionModel sT;
 	
-	// Get/-Set für die sT Variable
 	
 	
+	// Menü
+	public void menu() {
+		String eingabe = "";
+		Scanner scanner = new Scanner(System.in);
+		
+		while(eingabe.equals("exit")) {
+			System.out.println("Bitte gib eine Aktion ein (z.B. show, exit)");
+			eingabe = scanner.nextLine();
+			
+			switch (eingabe) {
+			case "show":	
+				System.out.println("Du hast dich für die Anzeige einer Überweisung entschieden. Hier bitte: \n ");
+				ausgeben();
+					break;
+			case "exit": 
+				System.out.println("Schön, dass du da warst. Tschüss \n ");
+			}
+			
+		}
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	// Methoden die aus dem Menü aufgerufen werden können
 	
 	public void ausgeben() {
 		System.out.println(
@@ -40,14 +65,5 @@ public class TransactionView {
 		this.sT = sT;
 	}
 	
-	// Neue Überweisung anlegen
-     
-	/*
-	private String 	empfaenger;
-	private String 	empfaengerIban;
-	private String 	empfaengerBic;
-	private double 	betrag;
-	private String	waehrung;
-	private String	verwendungszweck;
- */
+
 }
