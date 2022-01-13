@@ -1,4 +1,4 @@
-package de.telekom.sea7;
+package de.telekom.sea7.barfRechner;
 
 public class BarfVorlage {
 

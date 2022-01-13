@@ -1,4 +1,4 @@
-package de.telekom.sea7;
+package de.telekom.sea7.barfRechner;
 import java.util.Scanner; // Import der Scanner-Funktions-Bibliothek
 
 public class Barfrechner {
@@ -75,7 +75,12 @@ public class Barfrechner {
         	
         	double input4 = meinScanner.nextDouble();
             double eingegebenesKoerpergewicht4 = input4;
+            System.out.println("dein Hund benötigt am Tag " + kopieBarfVorlage.gesamt(eingegebenesKoerpergewicht4) + " kg Nahrung");	
             System.out.println("dein Hund benötigt am Tag " + kopieBarfVorlage.anteilFleisch(eingegebenesKoerpergewicht4) + " kg Fleisch");
+            System.out.println("dein Hund benötigt am Tag " + kopieBarfVorlage.anteilPflanzen(eingegebenesKoerpergewicht4) + " kg pflanzliche Nahrung");
+            
+            
+            
         break;
         case 5:
         	System.out.println("----------------------------------------");
