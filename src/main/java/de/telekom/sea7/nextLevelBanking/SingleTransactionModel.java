@@ -1,6 +1,6 @@
 package de.telekom.sea7.nextLevelBanking;
 
-public class singleTransactionModel {
+public class SingleTransactionModel {
 	
 	// Properties
 	private String 	empfaenger;
@@ -11,7 +11,7 @@ public class singleTransactionModel {
 	private String	verwendungszweck;
 	
 	// Eigener Constructor mit Verwendungszweck
-	public singleTransactionModel(String empfaenger, String empfaengerIban, String empfaengerBic, double betrag, String waehrung, String	verwendungszweck) {
+	public SingleTransactionModel(String empfaenger, String empfaengerIban, String empfaengerBic, double betrag, String waehrung, String	verwendungszweck) {
 		this.empfaenger = empfaenger;
 		this.empfaengerIban = empfaengerIban;
 		this.empfaengerBic = empfaengerBic;
@@ -21,7 +21,7 @@ public class singleTransactionModel {
 	}
 	
 	// Zweiter Constructor ohne Verwendungszweck
-	public singleTransactionModel(String empfaenger, String empfaengerIban, String empfaengerBic, double betrag, String waehrung) {
+	public SingleTransactionModel(String empfaenger, String empfaengerIban, String empfaengerBic, double betrag, String waehrung) {
 		this.empfaenger = empfaenger;
 		this.empfaengerIban = empfaengerIban;
 		this.empfaengerBic = empfaengerBic;

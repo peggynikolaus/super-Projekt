@@ -2,14 +2,14 @@ package de.telekom.sea7.nextLevelBanking;
 
 import java.util.Scanner;
 
-public class transactionView {
+public class TransactionView {
 	
 	// SCANNER Initialisieren
 	// Scanner scanner = new Scanner(System.in);
 	// Scanner Eingaben in der Eingabe input speichern
 	// String input = scanner.nextLine();
 	
-	private singleTransactionModel sT;
+	private SingleTransactionModel sT;
 	
 	// Get/-Set für die sT Variable
 	
@@ -32,11 +32,11 @@ public class transactionView {
 
 	
 	
-	public singleTransactionModel getsT() {
+	public SingleTransactionModel getsT() {
 		return sT;
 	}
 
-	public void setsT(singleTransactionModel sT) {
+	public void setsT(SingleTransactionModel sT) {
 		this.sT = sT;
 	}
 	

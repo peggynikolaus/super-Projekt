@@ -2,16 +2,16 @@ package de.telekom.sea7.nextLevelBanking;
 
 import java.util.Scanner;
 
-public class singleTransactionController {
+public class SingleTransactionController {
 	
 	// Eigene Run Methode um direkt Objektorientiert zu sein
 	public void run(String[] args) {
 		
 		// Instanz eines Models erstellen
-		singleTransactionModel sT = new singleTransactionModel("TestEmpfaenger", "DE12TESTIBAN123", "BICXXX", 12.5, "€" );
+		SingleTransactionModel sT = new SingleTransactionModel("TestEmpfaenger", "DE12TESTIBAN123", "BICXXX", 12.5, "€" );
 		
 		// Instanz einer View erstellen
-		transactionView tV = new transactionView();
+		TransactionView tV = new TransactionView();
 		
 		// Model und View bekannt machen
 		tV.setsT(sT);
