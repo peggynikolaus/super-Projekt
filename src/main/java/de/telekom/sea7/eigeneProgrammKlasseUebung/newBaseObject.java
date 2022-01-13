@@ -1,4 +1,4 @@
-package eigeneProgrammKlasseUebung;
+package de.telekom.sea7.eigeneProgrammKlasseUebung;
 
 public class newBaseObject {
 

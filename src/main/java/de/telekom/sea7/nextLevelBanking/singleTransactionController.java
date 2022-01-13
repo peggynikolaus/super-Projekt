@@ -16,7 +16,7 @@ public class singleTransactionController {
 		// Model und View bekannt machen
 		tV.setsT(sT);
 		
-		// Aufurf der Ausgabenmethode aus der View
+		// Aufruf der Ausgabenmethode aus der View
 		tV.ausgeben();
 		
 	}
