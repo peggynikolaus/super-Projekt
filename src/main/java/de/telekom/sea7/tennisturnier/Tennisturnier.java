@@ -18,6 +18,7 @@ public class Tennisturnier {
 		System.out.println(s3);
 	}
 	
+
 	public void duellStarten(Tennisspieler s1, Tennisspieler s2) {
 		
 		s1.erhoeheSpielUm1();

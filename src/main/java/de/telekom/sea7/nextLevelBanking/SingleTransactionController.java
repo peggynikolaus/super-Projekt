@@ -8,7 +8,7 @@ public class SingleTransactionController {
 	public void run(String[] args) {
 		
 		// Instanz eines Models erstellen
-		SingleTransactionModel sT = new SingleTransactionModel("TestEmpfaenger", "DE12TESTIBAN123", "BICXXX", 12.5, "€" );
+		SingleTransactionModel sT = new SingleTransactionModel("TestEmpfaenger", "DE12TESTIBAN123", "BICXXX", 12.5, "€", "TestVerwendung");
 		
 		// Instanz einer View erstellen
 		TransactionView tV = new TransactionView();
@@ -17,7 +17,7 @@ public class SingleTransactionController {
 		tV.setsT(sT);
 		
 		// Aufruf der Ausgabenmethode aus der View
-		tV.ausgeben();
+		tV.menu();
 		
 	}
 	
