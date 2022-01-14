@@ -1,4 +1,4 @@
-package FinalTestProject;
+package de.telekom.sea7.FinalTestProject;
 
 public class FinalTestKlasse {
 	
