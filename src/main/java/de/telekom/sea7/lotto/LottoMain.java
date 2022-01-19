@@ -13,7 +13,7 @@ public class LottoMain {
         lotto.setLottozahlen(9);
         lotto.setLottozahlen(11);
         lotto.setLottozahlen(23);
-        lotto.setLottozahlen(22);
+        lotto.setLottozahlen(25);
         lotto.setLottozahlen(32);
         lotto.setLottozahlen(48);
 
@@ -23,7 +23,7 @@ public class LottoMain {
         
         lotto.auswertungLottoschein();
         
-        lottogesellschaft.auszahlungGewinn(155);
+        // lottogesellschaft.auszahlungGewinn(155);
     }
 
 }

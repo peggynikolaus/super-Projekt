@@ -1,6 +1,12 @@
 package de.telekom.sea7.nextLevelBanking;
 
-public class SingleTransactionModel {
+public class VorlageUeberweisung {
+	// INHALT
+	// - Parameter einer einzelnen Überweisung
+	// - Get-Methoden zum Auslesen einzlener Parameter
+	// - Set-Methoden zum Setzen einzelner Parameter
+	// - Constructor zum Erzeugen eines Objekts mit den einzelnen Parametern
+	
 	
 	// Properties
 	private String 	empfaenger;
@@ -10,8 +16,8 @@ public class SingleTransactionModel {
 	private String	waehrung;
 	private String	verwendungszweck;
 	
-	// Eigener Constructor mit Verwendungszweck
-	public SingleTransactionModel(String empfaenger, String empfaengerIban, String empfaengerBic, double betrag, String waehrung, String verwendungszweck) {
+	// Eigener Constructor
+	public VorlageUeberweisung(String empfaenger, String empfaengerIban, String empfaengerBic, double betrag, String waehrung, String verwendungszweck) {
 		this.empfaenger = empfaenger;
 		this.empfaengerIban = empfaengerIban;
 		this.empfaengerBic = empfaengerBic;
@@ -20,16 +26,14 @@ public class SingleTransactionModel {
 		this.verwendungszweck = verwendungszweck;
 	}
 	
-	/*
-	// Zweiter Constructor ohne Verwendungszweck
-	public SingleTransactionModel(String empfaenger, String empfaengerIban, String empfaengerBic, double betrag, String waehrung) {
-		this.empfaenger = empfaenger;
-		this.empfaengerIban = empfaengerIban;
-		this.empfaengerBic = empfaengerBic;
-		this.betrag = betrag;
-		this.waehrung = waehrung;
+	// Aufgehübschte toString Methode für bessere hübschere Ausgaben
+	public String toString() {
+		return "Empfänger: " + this.empfaenger +
+				" Empfänger IBAN: " + this.empfaengerIban + 
+				" Empfänger BIC: " + this.empfaengerBic + 
+				" Betrag: " + this.betrag + " " + this.waehrung +
+				" Verwendungszweck: " + this.verwendungszweck;
 	}
-	*/
 	
 	// Get-/Set-Methoden
 	public String getEmpfaenger() {

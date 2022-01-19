@@ -1,14 +1,21 @@
 package de.telekom.sea7.nextLevelBanking;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TransactionView {
+public class View {
+	// INHALT
+	// - Menü
+	// - Ausgabe Methoden
+	// - Methode zur Erzeugung einer neuen Transaktion
+	// - ArrayList zur Speicherung mehrerer Single Transaktionen
+	
 	
 
+	ArrayList <Object> banking = new ArrayList <>(); 
 	
-	private SingleTransactionModel sT;
-	
-	
+	private VorlageUeberweisung vorlageUeberweisung;
+		
 	
 	// Menü
 	public void menu() {
@@ -17,7 +24,7 @@ public class TransactionView {
 		
 		while(!eingabe.equals("exit")) {
 			System.out.println("");
-			System.out.println("Bitte gib eine Aktion ein (z.B. show, exit, input)");
+			System.out.println("Bitte gib eine Aktion ein (z.B. show, showAll, exit, input)");
 			eingabe = scanner.nextLine();
 			
 			switch (eingabe) {
@@ -27,6 +34,9 @@ public class TransactionView {
 					break;
 			case "input":
 				eingeben();
+				break;
+			case "showAll":
+				allesAusgeben();
 				break;
 			case "exit": 
 				System.out.println("Schön, dass du da warst. Tschüss \n ");
@@ -47,16 +57,16 @@ public class TransactionView {
 	public void ausgeben() {
 		System.out.println(
 				"Empfänger: " +
-				sT.getEmpfaenger() +
+				vorlageUeberweisung.getEmpfaenger() +
 				"\nIBAN Empfänger: " +
-				sT.getEmpfaengerIban() +
+				vorlageUeberweisung.getEmpfaengerIban() +
 				"\nBIC Empfänger: " +
-				sT.getEmpfaengerBic() +
+				vorlageUeberweisung.getEmpfaengerBic() +
 				"\nBetrag: " +
-				sT.getBetrag() + " " +
-				sT.getWaehrung() +
+				vorlageUeberweisung.getBetrag() + " " +
+				vorlageUeberweisung.getWaehrung() +
 				"\nVerwendungszweck: " +
-				sT.getVerwendungszweck());
+				vorlageUeberweisung.getVerwendungszweck());
 	}
 
 	public void eingeben() {
@@ -72,7 +82,8 @@ public class TransactionView {
 		String eingabeBic = scanner.nextLine();
 		
 		System.out.println("Bitte gib einen Betrag an:");
-		double eingabeBetrag = scanner.nextDouble();
+		String eingabeBetrag1 = scanner.nextLine();
+		double eingabeBetrag = Double.parseDouble(eingabeBetrag1);
 		
 		System.out.println("Bitte gib die Währung an:");
 		String eingabeWaehrung = scanner.nextLine();
@@ -81,33 +92,44 @@ public class TransactionView {
 		String eingabeZweck = scanner.nextLine();
 		
 				
-		SingleTransactionModel sTm = new SingleTransactionModel(eingabeEmpfaenger, eingabeIban, eingabeBic, eingabeBetrag, eingabeWaehrung, eingabeZweck);
+		VorlageUeberweisung sTm = new VorlageUeberweisung(eingabeEmpfaenger, eingabeIban, eingabeBic, eingabeBetrag, eingabeWaehrung, eingabeZweck);
+		banking.add(sTm); // Hinzufügen der neu erzeugten Transaktion in die ArrayList
 		
 		System.out.println("");
 		System.out.println("Zur Kontrolle, hier deine eigegebenen Daten:");
 		
 		System.out.println(
 				"Empfänger: " +
-				sT.getEmpfaenger() +
+				sTm.getEmpfaenger() +
 				"\nIBAN Empfänger: " +
-				sT.getEmpfaengerIban() +
+				sTm.getEmpfaengerIban() +
 				"\nBIC Empfänger: " +
-				sT.getEmpfaengerBic() +
+				sTm.getEmpfaengerBic() +
 				"\nBetrag: " +
-				sT.getBetrag() + " " +
-				sT.getWaehrung() +
+				sTm.getBetrag() + " " +
+				sTm.getWaehrung() +
 				"\nVerwendungszweck: " +
-				sT.getVerwendungszweck());
+				sTm.getVerwendungszweck());
 	}
 	
+	// Ausgabe aller vom User erstellten Transaktionen die sich in der ArrayList befinden
+	public void allesAusgeben() {
+		for(Object ausgabe : banking) {
+			System.out.println(ausgabe);
+		}
+	}
 	
-	public SingleTransactionModel getsT() {
-		return sT;
+
+	
+	public VorlageUeberweisung getsT() {
+		return vorlageUeberweisung;
 	}
 
-	public void setsT(SingleTransactionModel sT) {
-		this.sT = sT;
+	public void setsT(VorlageUeberweisung vorlageUeberweisung) {
+		this.vorlageUeberweisung = vorlageUeberweisung;
 	}
 	
+
 
 }
+

@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		SingleTransactionController sTc = new SingleTransactionController();
+		Starter sTc = new Starter();
 		sTc.run(args);
 
 	}
