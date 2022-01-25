@@ -1,7 +1,5 @@
 package de.telekom.sea7.nextLevelBanking;
 
-import java.util.Scanner;
-
 public class Starter {
 	// INHALT
 	// - run-Mehtode zum direkten Einstieg in Objektorientierung

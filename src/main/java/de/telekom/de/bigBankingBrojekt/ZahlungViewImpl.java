@@ -10,5 +10,8 @@ public class ZahlungViewImpl implements ZahlungView {
 				+ zahlung.getWaehrung() + "\nVerwendungszweck: " + zahlung.getVerwendungszweck();
 
 	}
-
-}
+	
+	public Zahlung testZahlung() {
+		return new ZahlungImpl("Testkunde", "TestIBAN", "TestBIC", 222.22, "Eruo", "Test Verwendung");
+	}
+}	

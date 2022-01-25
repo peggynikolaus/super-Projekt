@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class View {
-	// INHALT
-	// - Menü
-	// - Ausgabe Methoden
-	// - Methode zur Erzeugung einer neuen Transaktion
-	// - ArrayList zur Speicherung mehrerer Single Transaktionen
-
+	// CONTENTS
+	// - menu
+	// - output methods
+	// - methods to create a new transaction
+	// - ArrayList for saving multiple single transactions
+	
 	ArrayList<Object> banking = new ArrayList<>();
 
 	private VorlageUeberweisung vorlageUeberweisung;
 
-	// Menü
+	// menu
 	public void menu() {
 		String eingabe = "";
 		Scanner scanner = new Scanner(System.in);
@@ -40,14 +40,14 @@ public class View {
 				break;	
 			case "exit":
 				System.out.println("Schön, dass du da warst. Tschüss \n ");
+				scanner.close();
 			}
-			// scanner.close();
+
 		}
 
 	}
 
-	// Methoden die aus dem Menü aufgerufen werden können
-
+	// menu added methods
 	public void ausgeben() {
 		System.out.println("Empfänger: " + vorlageUeberweisung.getEmpfaenger() + "\nIBAN Empfänger: "
 				+ vorlageUeberweisung.getEmpfaengerIban() + "\nBIC Empfänger: " + vorlageUeberweisung.getEmpfaengerBic()
@@ -87,7 +87,7 @@ public class View {
 		System.out.println("Empfänger: " + sTm.getEmpfaenger() + "\nIBAN Empfänger: " + sTm.getEmpfaengerIban()
 				+ "\nBIC Empfänger: " + sTm.getEmpfaengerBic() + "\nBetrag: " + sTm.getBetrag() + " "
 				+ sTm.getWaehrung() + "\nVerwendungszweck: " + sTm.getVerwendungszweck());
-		// scanner.close();
+		scanner.close();
 	}
 
 	// Ausgabe aller vom User erstellten Transaktionen die sich in der ArrayList

@@ -1,21 +1,20 @@
 package de.telekom.de.bigBankingBrojekt;
 
+import java.io.IOException;
+
 public class ApplicationImpl implements Application {
 	
 	private ZahlungView zahlungView = new ZahlungViewImpl();
 	private Zahlungen zahlungen = new ZahlungenImpl();
 	private ZahlungenView zahlungenView = new ZahlungenViewImpl();
 	
-	public void run(String[] args) {
+	private MenuView menuView = new MenuViewImpl();
+	
+	public void run(String[] args) throws IOException {
 		
-		ZahlungImpl test = new ZahlungImpl("Peggy", "DE1234", "BIC1234", 200.0, "€", "Hundefutter");
+		menuView.menu();
 		
-		//zahlungView.singleOutput(test);
-		System.out.println(zahlungView.singleOutput(test));
 
-		zahlungen.addZahlung(test);
-		zahlungen.addZahlung(test);
-		zahlungenView.multiOutput(zahlungen);
 	}
 
 }

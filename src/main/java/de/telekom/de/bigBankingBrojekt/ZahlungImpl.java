@@ -6,6 +6,7 @@ public class ZahlungImpl implements Zahlung {
 	private String empfaengerIBAN;
 	private String empfaengerBIC;
 	private double betrag;
+	private String betrag1;
 	private String waehrung;
 	private String verwendungszweck;
 	
@@ -20,6 +21,14 @@ public class ZahlungImpl implements Zahlung {
 		this.betrag = betrag;
 		this.waehrung = waehrung;
 		this.verwendungszweck = verwendungszweck;
+	}
+	
+	//Constructor			//Daten die angegeben werden müssen
+	public ZahlungImpl(String empfaenger, String betrag, String waehrung ) {
+		this.empfaenger = empfaenger;
+		this.betrag1 = betrag;
+		this.waehrung = waehrung;
+
 	}
 
 	public String getEmpfaenger() {
