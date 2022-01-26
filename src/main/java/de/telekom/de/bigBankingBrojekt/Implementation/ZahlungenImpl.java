@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import de.telekom.de.bigBankingBrojekt.OutOfRangeException;
 import de.telekom.de.bigBankingBrojekt.Interfaces.Zahlungen;
 
 public class ZahlungenImpl implements Zahlungen, Iterable {
@@ -47,9 +48,14 @@ public class ZahlungenImpl implements Zahlungen, Iterable {
 	
 	
 	
-	public Object get(int position) {
-		return paymentsList.get(position);
+	public Object get(int position) throws OutOfRangeException {
+		if (paymentsList.size() < 0) {
+			throw new OutOfRangeException("Das ist nicht möglich!");
+		} else {
+			return paymentsList.get(position);
+		}
 	}
+		
 	
 	public int size() {
 		return paymentsList.size();
