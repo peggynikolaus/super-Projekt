@@ -1,9 +1,12 @@
-package de.telekom.de.bigBankingBrojekt;
+package de.telekom.de.bigBankingBrojekt.Implementation;
+
+import de.telekom.de.bigBankingBrojekt.Interfaces.Zahlung;
+import de.telekom.de.bigBankingBrojekt.Interfaces.ZahlungView;
 
 public class ZahlungViewImpl implements ZahlungView {
 
 	
-	public String singleOutput(Zahlung zahlung) {
+	public String singleOutput(Zahlung zahlung) throws Exception {
 
 		return "Empfänger: " + zahlung.getEmpfaenger() + "\nIBAN Empfänger: " + zahlung.getEmpfaengerIBAN()
 				+ "\nBIC Empfänger: " + zahlung.getEmpfaengerBIC() + "\nBetrag: " + zahlung.getBetrag() + " "

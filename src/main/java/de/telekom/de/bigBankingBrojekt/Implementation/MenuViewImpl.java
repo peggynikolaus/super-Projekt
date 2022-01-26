@@ -1,7 +1,12 @@
-package de.telekom.de.bigBankingBrojekt;
+package de.telekom.de.bigBankingBrojekt.Implementation;
 
 import java.io.IOException;
 import java.util.Scanner;
+
+import de.telekom.de.bigBankingBrojekt.Interfaces.MenuView;
+import de.telekom.de.bigBankingBrojekt.Interfaces.ZahlungView;
+import de.telekom.de.bigBankingBrojekt.Interfaces.Zahlungen;
+import de.telekom.de.bigBankingBrojekt.Interfaces.ZahlungenView;
 
 public class MenuViewImpl implements MenuView {
 	
@@ -9,7 +14,7 @@ public class MenuViewImpl implements MenuView {
 	private ZahlungenView zahlungenView = new ZahlungenViewImpl();
 	private Zahlungen zahlungen = new ZahlungenImpl();
 	
-	public void menu() throws IOException {
+	public void menu() throws Exception {
 		String eingabe = "";
 		Scanner scanner = new Scanner(System.in);
 		

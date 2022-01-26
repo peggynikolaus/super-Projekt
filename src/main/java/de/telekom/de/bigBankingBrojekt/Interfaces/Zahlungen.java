@@ -1,4 +1,4 @@
-package de.telekom.de.bigBankingBrojekt;
+package de.telekom.de.bigBankingBrojekt.Interfaces;
 
 import java.io.IOException;
 import java.util.Iterator;

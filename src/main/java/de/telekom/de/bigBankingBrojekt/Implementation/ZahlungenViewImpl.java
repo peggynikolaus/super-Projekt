@@ -1,14 +1,18 @@
-package de.telekom.de.bigBankingBrojekt;
+package de.telekom.de.bigBankingBrojekt.Implementation;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import de.telekom.de.bigBankingBrojekt.Interfaces.Zahlung;
+import de.telekom.de.bigBankingBrojekt.Interfaces.Zahlungen;
+import de.telekom.de.bigBankingBrojekt.Interfaces.ZahlungenView;
+
 public class ZahlungenViewImpl implements ZahlungenView {
 
 	private final static String CSV_FILE_NAME = "ExportAll.csv";
 	
-	public void multiOutput(Zahlungen zahlungen) {
+	public void multiOutput(Zahlungen zahlungen) throws Exception {
 		for (Object multiPayment : zahlungen) {
 			Zahlung tempZahlung = (Zahlung)multiPayment;
 			System.out.println(tempZahlung.getEmpfaenger() + " " + tempZahlung.getBetrag() + tempZahlung.getWaehrung());
@@ -17,7 +21,7 @@ public class ZahlungenViewImpl implements ZahlungenView {
 	
 	// Umzug nach ZahlungenImpl wäre irgendwie logisch
 	// Überschriften manuell an Position 0 appenden!!! OFFENES ToDo
-	public void multiExport(Zahlungen zahlungen) throws IOException {
+	public void multiExport(Zahlungen zahlungen) throws Exception, IOException {
 
 		File csvOutputFile = new File(CSV_FILE_NAME);
 		 try (PrintWriter pw = new PrintWriter(csvOutputFile)) 
