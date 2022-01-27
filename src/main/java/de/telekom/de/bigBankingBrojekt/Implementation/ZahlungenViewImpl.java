@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import de.telekom.de.bigBankingBrojekt.Interfaces.GenericList;
 import de.telekom.de.bigBankingBrojekt.Interfaces.Zahlung;
 import de.telekom.de.bigBankingBrojekt.Interfaces.Zahlungen;
 import de.telekom.de.bigBankingBrojekt.Interfaces.ZahlungenView;
@@ -40,7 +41,7 @@ public class ZahlungenViewImpl implements ZahlungenView {
 	
 
 	
-
+	
 	public Zahlungen testZahlungen() {
 	ZahlungImpl test1 = new ZahlungImpl("Test1", "DE1", "BIC1234",
 			100, "€", "Hundefutter");
@@ -48,11 +49,12 @@ public class ZahlungenViewImpl implements ZahlungenView {
 			200, "€", "Hundefutter");
 	ZahlungImpl test3 = new ZahlungImpl("Test3", "DE3", "BIC1234",
 			300, "€", "Hundefutter");
-	Zahlungen zahlungen = new ZahlungenImpl();
-	zahlungen.addZahlung(test1);
-	zahlungen.addZahlung(test2);
-	zahlungen.addZahlung(test3);
-	return zahlungen;
+	// Frage an Thorsten, warum nicht über das Interface???
+	GenericListImpl<Object> zahlungen = new GenericListImpl<Object>();
+	zahlungen.add(test1);
+	zahlungen.add(test2);
+	zahlungen.add(test3);
+	return (Zahlungen) zahlungen;
 	}
 }
 
