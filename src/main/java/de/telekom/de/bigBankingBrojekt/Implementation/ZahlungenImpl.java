@@ -35,7 +35,7 @@ public class ZahlungenImpl extends GenericListImpl<Zahlung> implements Zahlungen
 		String line = "";
 		String trenner = ";";
 		try {
-			String filePath = "/home/sea003/eclipse-workspace/super-Projekt/super-Projekt/testInput.csv";
+			String filePath = "/home/sea004/eclipse-workspace/super-Projekt/super-Projekt/testInput.csv";
 			FileReader fileReader = new FileReader(filePath);
 
 			BufferedReader reader = new BufferedReader(fileReader);
