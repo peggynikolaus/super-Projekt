@@ -1,15 +1,18 @@
 package de.telekom.de.bigBankingBrojekt.Interfaces;
 
 import java.io.IOException;
-import java.util.Iterator;
 
-import de.telekom.de.bigBankingBrojekt.OutOfRangeException;
-
-public interface Zahlungen extends Iterable {
+public interface Zahlungen extends GenericList<Zahlung> {
 	
-	//void addZahlung(Object zahlung);
+	
+	/**liest eine CSV Datei ein und speichert die Daten in einer ArrayList & Counter */
 	public void multiImport() throws IOException;
-	//Object get(int position) throws OutOfRangeException;
-	//Iterator iterator();
+	
+	/**Methode interiert vorhandes Array und schreibt jede Iteration in eine neue Zeile einer csv Datei*/
+	void multiExport(Zahlungen zahlungen) throws Exception, IOException;
+	
+	public int getCounter();
+	
+	public void setCounter(int counter);
 
 }

@@ -4,14 +4,21 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import de.telekom.de.bigBankingBrojekt.OutOfRangeException;
+import de.telekom.de.bigBankingBrojekt.Interfaces.GenericList;
 
-public class GenericListImpl<T> implements Iterable {
+/** die Klasse bildet ein Template für Listen und dazugehörigen Methoden
+*   <T> = Typ der generisch beim instanzieren der Klasse angegeben werden muss
+*/
+public class GenericListImpl<T> implements GenericList<T>, Iterable<T> {
+	
 	
 	ArrayList<T> universalList = new ArrayList<T>();
+	
 	
 	public void add(T placeholder) {
 		universalList.add(placeholder);
 	}
+	
 
 	public T get(int position) throws OutOfRangeException {
 		if (universalList.size() < 0) {
@@ -25,10 +32,20 @@ public class GenericListImpl<T> implements Iterable {
 		return universalList.size();
 	}
 	
-	public Iterator iterator() {
+	public Iterator<T> iterator() {
 		return universalList.iterator();
 	}
+
+
+	
+
+
+
+		
+	
+	}
+
 	
 	
 
-}
+

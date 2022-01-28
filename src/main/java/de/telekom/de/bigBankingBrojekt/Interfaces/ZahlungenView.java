@@ -2,8 +2,12 @@ package de.telekom.de.bigBankingBrojekt.Interfaces;
 
 import java.io.IOException;
 
+
 public interface ZahlungenView {
+	/**
+	 * Methode um den Inhalt der ArrayList in gekürzter Form auszugeben
+	 */
 	void multiOutput(Zahlungen zahlungen) throws Exception;
-	void multiExport(Zahlungen zahlungen) throws IOException, Exception;
-	Zahlungen testZahlungen();
+
+	//Zahlungen testZahlungen();
 }

@@ -2,13 +2,20 @@ package de.telekom.de.bigBankingBrojekt.Interfaces;
 
 import java.util.Iterator;
 
-public interface GenericList<T> {
+import de.telekom.de.bigBankingBrojekt.OutOfRangeException;
+
+public interface GenericList<T> extends Iterable<T> {
 	
-	void add ();
+	void add (T placeholder);
 	
-	T get ();
+	T get (int position)throws OutOfRangeException;
 	
 	int size();
 	
-	Iterator iterator();
+	Iterator<T> iterator();
+	
+	
+	
+	
+	
 }
