@@ -9,14 +9,11 @@ import de.telekom.de.bigBankingBrojekt.Interfaces.Zahlungen;
 import de.telekom.de.bigBankingBrojekt.Interfaces.ZahlungenView;
 
 public class ApplicationImpl implements Application {
-	
-	private MenuView menuView = new MenuViewImpl();
-	
-	public void run(String[] args) throws Exception, IOException {
-		
-		menuView.menu();
-		
 
+	private MenuView menuView = new MenuViewImpl();
+
+		public void run(String[] args) throws Exception, IOException {
+		menuView.menu();
 	}
 
 }
